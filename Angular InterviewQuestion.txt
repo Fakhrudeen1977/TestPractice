@@ -1,0 +1,158 @@
+How to fetch bloodId and Name 
+ 
+
+       <select class="form-control clear-input" formControlName="bloodGroupName" [(ngModel)]="selectedBloodGroup">
+                            
+                            <option value="null" disabled>Choose a BloodGroup</option>
+                            <!--
+                            <option *ngFor="let blood of bloodGrp"  [ngValue]="{ id: blood.bloodId, name: blood.bloodGroupName }">{{blood.bloodGroupName}}</option>
+                            -->
+
+                             <option *ngFor="let blood of bloodGrp"  value="blood.bloodId">{{blood.bloodGroupName}}</option>
+                          
+        </select>
+
+
+---------------------------------------------------------
+Angular Basics 
+
+1.First install nodejs and NPM 
+2.Install Angular CLI 
+----------------------------------------------------
+How to find Angular Version
+
+ng --version
+
+---------------------------------------------------
+Creating a new Angular Application
+
+ng new welcome
+----------------------------------------------------------
+Running your new Angular Project
+ng serve --open
+or 
+ng serve
+ 
+The above command compiles the Angular application and starts the development server.
+The default port for the development server is 4200
+
+ng build command. This will build and copy the output files to the dist\getting-started folder (Older versions copied the files to the dist folder).
+
+----------------------------------------------------------------------------
+
+app.module.ts
+app.component.ts
+app.routing.ts
+Index.html is the entry point of our application.
+
+---------------------------------------------------------------
+What is Webpack?
+Webpack is a bundler. it scans our application looking for JavaScript files and merges them into one ( or more) big file. Webpack has the ability to bundle any kind of file like JavaScript, CSS, SASS, LESS, images, HTML, & fonts, etc.
+
+-----------------------------------------------------------------
+The safe navigation operator ( ? )
+You can make use of a safe navigation operator ( ? ) to guards against null and undefined values.
+
+----------------------------------------------------------------------------------------------
+1. Angular Interview Questions
+
+
+Sometimes, we have a situation, in which we should send the data to the service of JSON format. For that, we can create a dummy data to test the API and can send it to the service by converting into JSON format like in the given example.
+ 
+For that, we can use a method JSON.stringify(), which is used to convert the object data into the JSON format.
+
+import { Component , OnInit } from '@angular/core';  
+  
+@Component({  
+  selector: 'my-app',  
+  templateUrl: './app.component.html',  
+  styleUrls: [ './app.component.css' ],  
+})  
+export class AppComponent implements OnInit {  
+  
+  stringifiedData: any;  
+  
+  // Object Data  
+  myData = {  
+    name: "Manav",  
+    qualification: "M.C.A",  
+    technology: "Angular"  
+  };  
+  
+  ngOnInit() {  
+  
+    // Object data  
+    console.log(this.myData);  
+  
+    // Convert to JSON  
+    this.stringifiedData = JSON.stringify(this.myData);  
+    console.log("With Stringify :" , this.stringifiedData);  
+  
+  }  
+}  
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+2.How to parse JSON data 
+ 
+We have seen a simple example to convert data from an object to JSON. Now, if we have data into JSON format, then we need to convert it into object format. Here, one method will be useful, i.e., JSON.parse().
+ 
+It takes the data in JSON format and converts it into JavaScript Object format. Just see the simple example below.
+ 
+
+import { Component , OnInit } from '@angular/core';  
+  
+@Component({  
+  selector: 'my-app',  
+  templateUrl: './app.component.html',  
+  styleUrls: [ './app.component.css' ],  
+})  
+export class AppComponent implements OnInit {  
+  
+  stringifiedData: any;  
+  parsedJson: any;  
+  
+  // Object Data  
+  myData = {  
+    name: "Manav",  
+    qualification: "M.C.A",  
+    technology: "Angular"  
+  };  
+  
+  ngOnInit() {  
+  
+    // Object data  
+    console.log(this.myData);  
+  
+    // Convert to JSON  
+    this.stringifiedData = JSON.stringify(this.myData);  
+    console.log("With Stringify :" , this.stringifiedData);  
+  
+     // Parse from JSON  
+    this.parsedJson = JSON.parse(this.stringifiedData);  
+    console.log("With Parsed JSON :" , this.parsedJson);  
+      
+  }
+
+-----------------------------------------------------------------
+
+3 .Data Binding
+
+The Component passes the data to the view using a process called Data Binding. This is done by Binding the DOM Elements to component properties
+
+interpolation
+
+property binding
+
+Event binding
+
+Two way data binding
+
+
+
+
+----------------------------------------------------------------------------
+4  Angular Directive
+
+Directives
+The Angular directive helps us to manipulate the DOM. You can change the appearance, behavior, or layout of a DOM element using the directives. They help you to extend HTML. The Angular directives are classified into three categories based on how they behave.  They are Component, Structural and Attribute Directives
