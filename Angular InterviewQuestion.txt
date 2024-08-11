@@ -1,5 +1,6 @@
-How to fetch bloodId and Name 
- 
+How to create angular project
+
+How to fetch bloodId and Name  
 
        <select class="form-control clear-input" formControlName="bloodGroupName" [(ngModel)]="selectedBloodGroup">
                             
